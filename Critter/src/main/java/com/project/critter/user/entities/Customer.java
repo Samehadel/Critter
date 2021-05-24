@@ -1,12 +1,11 @@
-package com.udacity.jdnd.course3.critter.user.entities;
+package com.project.critter.user.entities;
 
-import com.udacity.jdnd.course3.critter.pet.Pet;
+
+import com.project.critter.pet.Pet;
 import org.hibernate.annotations.Nationalized;
-import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity

@@ -1,4 +1,4 @@
-package com.udacity.jdnd.course3.critter.schedule;
+package com.project.critter.schedule;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

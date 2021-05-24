@@ -1,7 +1,7 @@
-package com.udacity.jdnd.course3.critter.user.helper;
+package com.project.critter.user.helper;
 
-import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
-import com.udacity.jdnd.course3.critter.user.entities.Employee;
+import com.project.critter.user.EmployeeSkill;
+import com.project.critter.user.entities.Employee;
 
 import java.util.ArrayList;
 import java.util.Comparator;

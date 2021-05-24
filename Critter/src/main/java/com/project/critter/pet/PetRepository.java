@@ -1,6 +1,6 @@
-package com.udacity.jdnd.course3.critter.pet;
+package com.project.critter.pet;
 
-import com.udacity.jdnd.course3.critter.user.entities.Customer;
+import com.project.critter.user.entities.Customer;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

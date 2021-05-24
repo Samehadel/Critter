@@ -1,16 +1,17 @@
-package com.udacity.jdnd.course3.critter;
+package com.project.critter;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import com.udacity.jdnd.course3.critter.pet.PetController;
-import com.udacity.jdnd.course3.critter.pet.PetDTO;
-import com.udacity.jdnd.course3.critter.pet.PetType;
-import com.udacity.jdnd.course3.critter.schedule.ScheduleController;
-import com.udacity.jdnd.course3.critter.schedule.ScheduleDTO;
-import com.udacity.jdnd.course3.critter.user.*;
-import com.udacity.jdnd.course3.critter.user.dto.CustomerDTO;
-import com.udacity.jdnd.course3.critter.user.dto.EmployeeDTO;
-import com.udacity.jdnd.course3.critter.user.dto.EmployeeRequestDTO;
+import com.project.critter.pet.PetController;
+import com.project.critter.pet.PetDTO;
+import com.project.critter.pet.PetType;
+import com.project.critter.schedule.ScheduleController;
+import com.project.critter.schedule.ScheduleDTO;
+import com.project.critter.user.EmployeeSkill;
+import com.project.critter.user.UserController;
+import com.project.critter.user.dto.CustomerDTO;
+import com.project.critter.user.dto.EmployeeDTO;
+import com.project.critter.user.dto.EmployeeRequestDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

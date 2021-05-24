@@ -1,4 +1,4 @@
-package com.udacity.jdnd.course3.critter.user.dto;
+package com.project.critter.user.dto;
 
 import java.util.ArrayList;
 import java.util.List;

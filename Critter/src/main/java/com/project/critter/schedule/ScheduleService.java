@@ -1,15 +1,14 @@
-package com.udacity.jdnd.course3.critter.schedule;
+package com.project.critter.schedule;
 
-import com.udacity.jdnd.course3.critter.pet.Pet;
-import com.udacity.jdnd.course3.critter.pet.PetService;
-import com.udacity.jdnd.course3.critter.user.entities.Customer;
-import com.udacity.jdnd.course3.critter.user.entities.Employee;
-import com.udacity.jdnd.course3.critter.user.service.CustomerService;
-import com.udacity.jdnd.course3.critter.user.service.EmployeeService;
+import com.project.critter.pet.Pet;
+import com.project.critter.pet.PetService;
+import com.project.critter.user.entities.Employee;
+import com.project.critter.user.service.CustomerService;
+import com.project.critter.user.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import javax.transaction.Transactional;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -45,22 +44,26 @@ public class ScheduleService {
         return scheduleRepository.save(schedule);
     }
 
+    @Transactional
     public List<Schedule> findAllSchedules(){
         return (List<Schedule>) scheduleRepository.findAll();
     }
 
+    @Transactional
     public List<Schedule> findScheduleForPet(Long petId){
         Pet pet = petService.getPetById(petId);
 
         return scheduleRepository.findByPets(pet);
     }
 
+    @Transactional
     public List<Schedule> findScheduleForEmployee(Long employeeId){
         Employee employee = employeeService.findEmployee(employeeId);
 
         return scheduleRepository.findByEmployees(employee);
     }
 
+    @Transactional
     public Set<Schedule> findScheduleForCustomer(Long customerId) {
         Set<Schedule> schedules = new HashSet<>();
         List<Pet> pets = petService.getPetsByOwner(customerId);

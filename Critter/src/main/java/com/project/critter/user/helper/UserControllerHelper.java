@@ -1,10 +1,10 @@
-package com.udacity.jdnd.course3.critter.user.helper;
+package com.project.critter.user.helper;
 
-import com.udacity.jdnd.course3.critter.pet.Pet;
-import com.udacity.jdnd.course3.critter.user.dto.CustomerDTO;
-import com.udacity.jdnd.course3.critter.user.dto.EmployeeDTO;
-import com.udacity.jdnd.course3.critter.user.entities.Customer;
-import com.udacity.jdnd.course3.critter.user.entities.Employee;
+import com.project.critter.pet.Pet;
+import com.project.critter.user.dto.CustomerDTO;
+import com.project.critter.user.dto.EmployeeDTO;
+import com.project.critter.user.entities.Customer;
+import com.project.critter.user.entities.Employee;
 import org.springframework.beans.BeanUtils;
 
 import java.util.ArrayList;

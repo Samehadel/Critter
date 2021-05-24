@@ -1,11 +1,11 @@
-package com.udacity.jdnd.course3.critter.user.service;
+package com.project.critter.user.service;
 
-import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
-import com.udacity.jdnd.course3.critter.user.dto.EmployeeRequestDTO;
-import com.udacity.jdnd.course3.critter.user.entities.Employee;
+import com.project.critter.user.EmployeeSkill;
+import com.project.critter.user.dto.EmployeeRequestDTO;
+import com.project.critter.user.entities.Employee;
+import com.project.critter.user.helper.UserServiceHelper;
+import com.project.critter.user.repository.EmployeeRepository;
 import com.udacity.jdnd.course3.critter.user.exceptions.EmployeeNotFoundException;
-import com.udacity.jdnd.course3.critter.user.helper.UserServiceHelper;
-import com.udacity.jdnd.course3.critter.user.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +16,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
+@Transactional
 public class EmployeeService {
 
     @Autowired
@@ -24,7 +25,6 @@ public class EmployeeService {
     /*
         Save Or Update Employee based on id nullability
      */
-    @Transactional
     public Employee save(Employee employee) {
         return employeeRepository.save(employee);
     }
@@ -32,7 +32,6 @@ public class EmployeeService {
     /*
         Retrieve all employees from the database
      */
-    @Transactional
     public Employee findEmployee(Long employeeId){
         Optional<Employee> optionalEmployee = employeeRepository.findById(employeeId);
 
@@ -45,7 +44,6 @@ public class EmployeeService {
     /*
         Set available days for a specific employee
      */
-    @Transactional
     public void setEmployeeAvailability(Long employeeId, Set<DayOfWeek> daysAvailable) {
         Optional<Employee> optionalEmployee = employeeRepository.findById(employeeId);
 

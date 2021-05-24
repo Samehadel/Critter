@@ -1,6 +1,6 @@
-package com.udacity.jdnd.course3.critter.user.entities;
+package com.project.critter.user.entities;
 
-import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
+import com.project.critter.user.EmployeeSkill;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;

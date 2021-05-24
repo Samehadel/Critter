@@ -1,9 +1,7 @@
-package com.udacity.jdnd.course3.critter.schedule;
+package com.project.critter.schedule;
 
-import com.udacity.jdnd.course3.critter.pet.Pet;
-import com.udacity.jdnd.course3.critter.user.dto.CustomerDTO;
-import com.udacity.jdnd.course3.critter.user.entities.Customer;
-import com.udacity.jdnd.course3.critter.user.entities.Employee;
+import com.project.critter.pet.Pet;
+import com.project.critter.user.entities.Employee;
 import org.springframework.beans.BeanUtils;
 
 import java.util.ArrayList;

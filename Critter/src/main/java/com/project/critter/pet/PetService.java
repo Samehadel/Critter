@@ -1,7 +1,7 @@
-package com.udacity.jdnd.course3.critter.pet;
+package com.project.critter.pet;
 
-import com.udacity.jdnd.course3.critter.user.entities.Customer;
-import com.udacity.jdnd.course3.critter.user.service.CustomerService;
+import com.project.critter.user.entities.Customer;
+import com.project.critter.user.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class PetService {
 
     @Autowired
@@ -19,7 +20,7 @@ public class PetService {
     private CustomerService customerService;
 
 
-    @Transactional
+
     public Pet save(Pet pet){
         Customer owner = customerService.findCustomerById(pet.getOwner().getId());
 
@@ -28,7 +29,6 @@ public class PetService {
         return petRepository.save(pet);
     }
 
-    @Transactional
     public Pet getPetById (long petId){
         Optional<Pet> optionalPet = petRepository.findById(petId);
 
@@ -38,12 +38,10 @@ public class PetService {
         return optionalPet.get();
     }
 
-    @Transactional
     public List<Pet> getAllPets(){
         return (List<Pet>) petRepository.findAll();
     }
 
-    @Transactional
     public List<Pet> getPetsByOwner(long ownerId){
         // Use customer service to get a customer
         Customer owner = customerService.findCustomerById(ownerId);
