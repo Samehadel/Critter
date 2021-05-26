@@ -29,7 +29,7 @@ public class PetService {
         return petRepository.save(pet);
     }
 
-    public Pet getPetById (long petId){
+    public Pet findPetById(long petId){
         Optional<Pet> optionalPet = petRepository.findById(petId);
 
         if(!optionalPet.isPresent())
@@ -38,11 +38,11 @@ public class PetService {
         return optionalPet.get();
     }
 
-    public List<Pet> getAllPets(){
+    public List<Pet> findAllPets(){
         return (List<Pet>) petRepository.findAll();
     }
 
-    public List<Pet> getPetsByOwner(long ownerId){
+    public List<Pet> findPetsByOwner(long ownerId){
         // Use customer service to get a customer
         Customer owner = customerService.findCustomerById(ownerId);
 

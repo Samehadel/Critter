@@ -28,19 +28,19 @@ public class PetController {
 
     @GetMapping("/{petId}")
     public PetDTO getPet(@PathVariable long petId) {
-        return PetControllerHelper.convertPetEntity(petService.getPetById(petId));
+        return PetControllerHelper.convertPetEntity(petService.findPetById(petId));
     }
 
     @GetMapping
     public List<PetDTO> getPets(){
-        List<Pet> pets = petService.getAllPets();
+        List<Pet> pets = petService.findAllPets();
 
         return PetControllerHelper.convertListOfPetEntities(pets);
     }
 
     @GetMapping("/owner/{ownerId}")
     public List<PetDTO> getPetsByOwner(@PathVariable long ownerId) {
-        List<Pet> pets = petService.getPetsByOwner(ownerId);
+        List<Pet> pets = petService.findPetsByOwner(ownerId);
 
         return PetControllerHelper.convertListOfPetEntities(pets);
     }

@@ -22,12 +22,12 @@ public class CustomerService {
     @Autowired
     private PetService petService;
 
+
     public Customer save(Customer customer){
         return customerRepository.save(customer);
     }
 
-
-    public List<Customer> getAllCustomers(){
+    public List<Customer> findAllCustomers(){
         return (List<Customer>) customerRepository.findAll();
     }
 
@@ -41,7 +41,7 @@ public class CustomerService {
     }
 
     public Customer findOwnerByPetId(long petId){
-        Pet pet = petService.getPetById(petId);
+        Pet pet = petService.findPetById(petId);
 
         return customerRepository.findByPets(pet);
     }

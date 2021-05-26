@@ -43,7 +43,7 @@ public class UserController {
 
     @GetMapping("/customer")
     public List<CustomerDTO> getAllCustomers(){
-        List<Customer> customers = customerService.getAllCustomers();
+        List<Customer> customers = customerService.findAllCustomers();
 
         return UserControllerHelper.convertListOfCustomerEntities(customers);
     }

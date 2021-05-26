@@ -37,7 +37,7 @@ public class ScheduleService {
             schedule.getEmployees().add(emp);
         }
         for(Long petId: scheduleDto.getPetIds()){
-            Pet pet = petService.getPetById(petId);
+            Pet pet = petService.findPetById(petId);
             schedule.getPets().add(pet);
         }
 
@@ -51,7 +51,7 @@ public class ScheduleService {
 
     @Transactional
     public List<Schedule> findScheduleForPet(Long petId){
-        Pet pet = petService.getPetById(petId);
+        Pet pet = petService.findPetById(petId);
 
         return scheduleRepository.findByPets(pet);
     }
@@ -66,7 +66,7 @@ public class ScheduleService {
     @Transactional
     public Set<Schedule> findScheduleForCustomer(Long customerId) {
         Set<Schedule> schedules = new HashSet<>();
-        List<Pet> pets = petService.getPetsByOwner(customerId);
+        List<Pet> pets = petService.findPetsByOwner(customerId);
 
         for(int i = 0; i < pets.size(); i++)
             schedules.addAll(findScheduleForPet(pets.get(i).getId()));
